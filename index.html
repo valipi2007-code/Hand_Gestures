@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gesture-Controlled Interface</title>
+  <meta name="description" content="A dynamic, futuristic web interface controlled entirely by hand gestures.">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- MediaPipe dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <!-- Camera input & output overlay -->
+  <div class="video-container">
+    <video class="input_video" autoplay playsinline></video>
+    <canvas class="output_canvas" width="640" height="480"></canvas>
+    <div class="status">Camera Initializing...</div>
+  </div>
+  
+  <!-- Virtual Cursor -->
+  <div id="cursor">
+    <div class="cursor-ring"></div>
+  </div>
+
+  <div class="ui-container">
+    <header>
+      <h1>Air Touch</h1>
+      <p>Use your index finger to point, and pinch with your thumb to click.</p>
+    </header>
+    
+    <main>
+      <div class="card interactive" id="card-1">
+        <div class="icon">🚀</div>
+        <h2>Launch</h2>
+        <p>Pinch to activate this card and blast off into space.</p>
+      </div>
+      <div class="card interactive" id="card-2">
+        <div class="icon">✨</div>
+        <h2>Magic</h2>
+        <p>Experience the magic of touchless interaction.</p>
+      </div>
+      <div class="card interactive" id="card-3">
+        <div class="icon">🎵</div>
+        <h2>Music</h2>
+        <p>Control media playback without touching your device.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
